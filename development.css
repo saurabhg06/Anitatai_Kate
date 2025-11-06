@@ -54,6 +54,7 @@
     flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
     gap: 20px; /* Space between the cards */
     justify-content: center; /* Center the cards */
+    border-radius: 15px;
 }
 
 .work-card {
@@ -65,6 +66,10 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
     overflow: hidden;
     min-height: 400px; /* Set a minimum height for consistency */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* ADDED: Border radius for the card itself */
+    border-radius: 15px; /* Adjust this value (e.g., 5px) */
 }
 
 /* --- Card Content Styles --- */
