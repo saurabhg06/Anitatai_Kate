@@ -32,10 +32,9 @@
 
 .work-title-underline {
     height: 6px; 
-    width: 50%;
+    width: 100%;
     background-color: #004d99; /* Darker blue line */
     margin-bottom: 40px; 
-    text-align: center;
 }
 
 /* --- Description Text Styling --- */
@@ -83,7 +82,7 @@
 }
 
 .card-title-box {
-    background-color: #000;
+    /* background-color: #e3d8d8; */
     color: #fff;
     padding: 12px 5px; 
     text-align: center;
@@ -124,3 +123,42 @@
         width: 100%; 
     }
 }
+/* --- Card Layout (Flexbox) --- */
+
+.card-row {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center; 
+}
+
+.work-card {
+    /* Base width and styling as before */
+    width: calc(33.333% - 14px); 
+    display: flex; 
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;
+    min-height: 400px; 
+    
+    /* ADDED: Smooth transition for the hover effects */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* --- New Card Hover Effect --- */
+.work-card:hover {
+    /* Lifts the card slightly upwards */
+    transform: translateY(-5px); 
+    
+    /* Makes the shadow more pronounced */
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+    /* Optional: Slightly darker border or background for emphasis */
+}
+
+
+/* --- Card Content Styles --- */
+/* (The rest of your content styles remain the same) */
+/* ... */
