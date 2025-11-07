@@ -12,6 +12,111 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
+<style>
+     /* Remove default styling */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;     /* spacing between menu items */
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  display: inline-block;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;                  /* text color */
+  padding: 10px 18px;           /* button-like padding */
+  border-radius: 25px;          /* round shape */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.nav-link:hover {
+/*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=cec1ff&c2=9bf2f2&gt=l&gd=dtl
+*/
+background: #CEC1FF;
+background: linear-gradient(135deg, #CEC1FF, #9BF2F2);
+  color: #000;                  /* text becomes black */
+}
+
+/* Active page styling (Home) */
+.nav-link.active {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Transforming video  */
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+}
+
+video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Play button styling */
+#playBtn {
+  position: absolute;
+  bottom: 15px;
+  left: 18rem;
+  padding: 10px 18px;
+  /* background: white; */
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#playBtn:hover {
+  background: black;
+  color: white;
+}
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+}
+
+video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+#playBtn {
+  position: absolute;
+  bottom: 15px;
+  left: 18rem;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+#playBtn:hover {
+  background: black;
+  color: white;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -19,12 +124,17 @@
   <header class="header">
     <nav class="navbar">
       <!-- Logo -->
+
+      <div class="Nav-logo">
+        <img src="./images/Nav-logo.jpg" alt="AnitaTai-logo">
+      </div>
+
       <div class="nav-brand">
-        <h1 class="logo">Anitatai Kate<span></span></h1>
+        <h1 class="logo" >Anitatai Kate<span></span></h1>
       </div>
 
       <!-- Navigation Menu -->
-      <ul class="nav-menu">
+      <!-- <ul class="nav-menu">
         <li class="nav-item">
           <a href="index.html" class="nav-link active">Home</a>
         </li>
@@ -37,8 +147,24 @@
         <li class="nav-item">
           <a href="contact.html" class="nav-link">Contact Us</a>
         </li>
-      </ul>
+      </ul> -->
 
+   <ul class="nav-menu">
+  <li class="nav-item">
+    <a href="index.html" class="nav-link ">Home</a>
+  </li>
+  <li class="nav-item">
+    <a href="development.html" class="nav-link">Development Insights</a>
+  </li>
+  <li class="nav-item">
+    <a href="gallery.html" class="nav-link">Gallery</a>
+  </li>
+  <li class="nav-item">
+    <a href="contact.html" class="nav-link">Contact Us</a>
+  </li>
+</ul>
+
+   
       <!-- Right Section -->
       <div class="nav-right">
         <!-- Login Button -->
@@ -65,11 +191,10 @@
         <!-- <div class="section-with-video"> -->
       
         <video autoplay muted loop class="background-video">
-    <source src="./images/main-back-video.mp4" type="video/mp4" />
+    <source src="./images/Background-video-2.mp4" type="video/mp4" />
   </video>
 
-
-        <h1 class="hero-title">Welcome to My Creative World</h1>
+        <!-- <h1 class="hero-title">Welcome to My Creative World</h1> -->
         <p class="hero-subtitle">Discover amazing development insights and creative projects that inspire innovation and
           growth.</p>
         <div class="hero-buttons">
@@ -82,26 +207,40 @@
   </section>
 
   <!-- About Section -->
-  <section class="about" id="about">
-    <div class="about-container">
+  <section>
+    <div >
 
-      <div class="about-image">
-        <img src="images/anita-photo.jpg" alt="Anitatai Kate">
-      </div>
-      <div class="about-content">
-        <h1 class="about-quote">
+  <div class="upper-section">
+            <span class="about-quote">
           Be the change
           <p class="highlight">You wish to see</p>
-        </h1>
-        <h2 class="about-name">Smt. Anitatai Kate</h2>
-        <p class="about-text">
-          <strong>Anitatai Kate — A Leader Who Believes in Service.</strong><br>
-          She is a dynamic and compassionate social worker dedicated to community growth and development.
-          Her continuous efforts aim to build a society rooted in equality, innovation, and compassion.
-        </p>
-      </div>
+            </span>
+
+  </div>
+
+  <div class="content-section">
+    <div class="left">
+      <img
+        src="./images/kate-logo-2.png"
+        alt="Profile"
+      />
     </div>
-    <!-- Below section paragraph -->
+    <div class="right">
+      <h2>Smt. Anitatai Kate</h2>
+      <p>
+        <strong>Anitatai Kate – A Leader Who Believes in Service</strong>
+        She is a dedicated and compassionate Nagarsevak, known for her tireless commitment to the welfare of the community. Coming from a humble and service-oriented background, Anitatai has always believed that true leadership begins with empathy and action. From her early years, she has actively participated in various social initiatives, working towards uplifting women, empowering youth, and improving civic amenities.
+      </p>
+      <p>
+        As a Nagarsevak, she strongly believes that leadership is not about power, but about serving people with sincerity and responsibility. Her continuous efforts focus on building a society rooted in equality, innovation, and compassion, making her a true example of leadership through service.
+      </p>
+      
+    </div>
+  </div>
+  </div>
+
+</div>
+    <!-- Below about section paragraph -->
     <div class="about-detailed">
       <p>
         A leader must guide people in the right direction with dedication and purpose.
@@ -225,9 +364,8 @@
 
   </section>
 
-
 <!-- Dedication & work section -->
-<!-- DEDICATION SECTION -->
+
 <section class="dedication" id="dedication" style=" margin-top: 40px">
     <div class="h1">
         <h1>Over 10 years of Dedication & Work</h1>
@@ -258,18 +396,25 @@
 </section>
 
 <!-- TRANSFORMING SECTION -->
-<div class="transforming">
+<section class="transforming">
     <div class="transforming-heading">
         <h1>Transforming Pimple</h1>
         <div class="highlight-text">Saudagar</div>
     </div>
 
     <section class="content-section">
-        <div class="image-container">
-            <img src="./images/addr-citizen.jpg" alt="Addressing the Citizens">
-        </div>
+        
+<div class="image-container">
+  <video id="myVideo" autoplay loop muted>
+    <source src="./images/garba-video.mp4" type="video/mp4" />
+  </video>
+
+  <button id="playBtn"><i class="fa-solid fa-volume-xmark"></i></button>
+</div>
+
+
         <div class="text-container">
-            <h2>Addressing the Citizens</h2>
+            <h2>Grand Dandiya Festival</h2>
             <p>Always been devoted to the people, that's what being a true servant of the citizens is about. With years of experience working as a social worker to make positive change in our area and families, listening to every people, knowing what they deserve is paramount. From the biggest issue to the smallest, we make sure we get the job done for them.</p>
             <a href="#" class="read-more">Read More</a>
         </div>
@@ -285,7 +430,7 @@
             <a href="#" class="read-more">Read More</a>
         </div>
     </section>
-</div>
+  </section>
 
 <!-- TOWN INFRASTRUCTURE SLIDE (From previous context) -->
 <section class="town-infra-slide">
@@ -379,7 +524,24 @@
   });
 </script>
 
+<script>
+ const video = document.getElementById("myVideo");
+const btn = document.getElementById("playBtn");
+const icon = btn.querySelector("i");
 
+btn.addEventListener("click", () => {
+  if (video.muted) {
+    video.muted = false;
+    icon.classList.remove("fa-volume-xmark");
+    icon.classList.add("fa-volume-up");
+  } else {
+    video.muted = true;
+    icon.classList.remove("fa-volume-up");
+    icon.classList.add("fa-volume-xmark");
+  }
+});
+
+</script>
   <script src="script.js"></script>
 </body>
 
