@@ -322,6 +322,70 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
 
 
   </style>
+<style>
+  .popup-overlay {
+    display: none;
+    position: fixed;
+    top: 70px; /* pushes popup below navbar */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 70px);
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+  }
+
+  .popup-box {
+    position: relative;
+    background: #fff;
+    border-radius: 20px;
+    width: 85%;
+    max-width: 750px;
+    max-height: 80vh;
+    overflow-y: auto;
+    margin: 40px auto;
+    padding: 30px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.4);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .popup-box img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
+  .popup-box h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #222;
+  }
+
+  .popup-box p {
+    text-align: justify;
+    line-height: 1.6;
+    color: #444;
+  }
+
+  .close-popup {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #444;
+    transition: color 0.2s;
+  }
+
+  .close-popup:hover {
+    color: red;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+</style>
 
 </head>
 
@@ -439,9 +503,53 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
     </div>
   </section>
 
+    <!-- TRANSFORMING SECTION -->
+  <section class="transforming">
+    <div class="transforming-heading">
+      <h1>Transforming Pimple</h1>
+      <div class="highlight-text">Saudagar</div>
+    </div>
+
+    <section class="content-section">
+
+      <div class="image-container">
+        <video id="myVideo" autoplay loop muted>
+          <source src="./images/garba-video.mp4" type="video/mp4" />
+        </video>
+
+        <button id="playBtn"><i class="fa-solid fa-volume-xmark"></i></button>
+      </div>
+
+
+      <div class="text-container">
+        <h2>Grand Dandiya Festival</h2>
+        <p>Get ready to experience the rhythm, colors, and energy of Navratri like never before! Pimple Saudagar’s
+          Biggest Dandiya Festival brings together music, dance, and celebration in one grand evening. Dance to the
+          beats of traditional dandiya and garba, enjoy the festive ambience with friends and family, and create
+          memories that last a lifetime. With vibrant décor, live performances, and joyful spirits all around, this is
+          the celebration you don’t want to miss!.</p>
+        <a href="dandiya.html" class="read-more">Read More</a>
+      </div>
+    </section>
+
+    <section class="content-section reverse-layout">
+      <div class="image-container">
+        <img src="images/hero-section-background.JPG" alt="Developed Sports Ground">
+      </div>
+      <div class="text-container">
+        <h2>Empowering Society through Service</h2>
+        <p>Mrs. Anitatai Sandeep Kate has always believed that true leadership begins with service. 
+          Guided by compassion and commitment, she has dedicated her efforts to the welfare and progress of every 
+          citizen in Pimple Saudagar. Through her various social, cultural, and developmental initiatives — from 
+          environmental drives and women empowerment programs to sports, education, and health campaigns — Anitatai 
+          continues to create meaningful change at the grassroots level. Her vision of inclusive growth and active 
+          citizen participation reflects her belief that when people and progress walk together, communities truly thrive.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </section>
+  </section>
+
   <!-- Work & Development Insight Section -->
-
-
   <section id="work-insight" class=" py-5 bg-light">
     <div class="container text-center">
       <h2 class="fw-bold mb-3 text-uppercase">Work & Development Insight</h2>
@@ -508,7 +616,7 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
         <!-- Card 4 -->
         <div class="col-md-4 fade-in">
           <div class="card h-100 shadow border-0 card-hover">
-            <img src="images/Jallosh Shopping Festival.jpg" class="card-img-top" alt="Education Drive">
+            <img src="images/SAG08147.jpg" class="card-img-top" alt="Education Drive">
             <div class="card-body">
               <h5 class="card-title fw-bold">Jallosh Shopping Festival</h5>
               <p class="card-text">
@@ -560,40 +668,71 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
         </div>
       </div>
     </div>
-
   </section>
+
+  <!-- ====== Popup Template Section ====== -->
 
   <!-- Dedication & work section -->
+<section class="dedication" id="dedication" style="margin-top: 40px;">
+  <div class="h1">
+    <h1>Over 10 years of Dedication & Work</h1>
+  </div>
+  <div class="page">
+    <div class="cards">
+      <article class="cardx" aria-label="Card 1 - Health & Hygiene" onclick="openPopup('healthPopup')">
+        <div class="thumbnail"><i class="fa-solid fa-briefcase-medical"></i></div>
+        <h3>Health & Hygiene</h3>
+      </article>
 
-  <section class="dedication" id="dedication" style=" margin-top: 40px">
-    <div class="h1">
-      <h1>Over 10 years of Dedication & Work</h1>
+      <article class="cardx" aria-label="Card 2 - Town Planning" onclick="openPopup('townPopup')">
+        <div class="thumbnail"><i class="fa-solid fa-house"></i></div>
+        <h3>Town Planning</h3>
+      </article>
+
+      <article class="cardx" aria-label="Card 3 - Sports" onclick="openPopup('sportsPopup')">
+        <div class="thumbnail"><i class="fa-solid fa-baseball"></i></div>
+        <h3>Sports</h3>
+      </article>
+
+      <article class="cardx" aria-label="Card 4 - Social Work" onclick="openPopup('socialPopup')">
+        <div class="thumbnail"><i class="fa-solid fa-people-group"></i></div>
+        <h3>Social Work</h3>
+      </article>
     </div>
-    <div class="page">
-      <div class="cards">
-        <article class="cardx" aria-label="Card 1 - Health & Hygiene">
-          <div class="thumbnail"><i class="fa-solid fa-briefcase-medical"></i></div>
-          <h3>Health & hygiene</h3>
-        </article>
+  </div>
+</section>
 
-        <article class="cardx" aria-label="Card 2 - Town Planning">
-          <div class="thumbnail"><i class="fa-solid fa-house"></i></div>
-          <h3>Town Planning</h3>
-        </article>
+<!-- Health Popup -->
+<div id="healthPopup" class="popup-overlay" aria-hidden="true">
+  <div class="popup-box">
+    <span class="close-popup" onclick="closePopup('healthPopup')">&times;</span>
+    <img src="images/blood-donation-camp.jpg" alt="Health & Hygiene">
+    <h3>Health & Hygiene</h3>
+    <p>Under the leadership of Mrs. Anitatai Sandeep Kate, numerous health-focused initiatives were carried out to improve community well-being. From organizing large-scale blood donation camps to conducting health awareness drives, her mission has always been to promote hygiene and inspire people to adopt healthy habits.</p>
+  </div>
+</div>
 
-        <article class="cardx" aria-label="Card 3 - Sports">
-          <div class="thumbnail"><i class="fa-solid fa-baseball"></i></div>
-          <h3>Sports</h3>
-        </article>
+<!-- Town Planning Popup -->
+<div id="townPopup" class="popup-overlay" aria-hidden="true">
+  <div class="popup-box">
+    <span class="close-popup" onclick="closePopup('townPopup')">&times;</span>
+    <img src="images/hero-section-background.jpg" alt="Town Planning">
+    <h3>Town Planning</h3>
+    <p>Through effective town planning, Anitatai Kate and her team have focused on creating sustainable, clean, and organized urban spaces. Their vision emphasizes better sanitation systems, modern infrastructure, and accessible facilities for all residents of the city.</p>
+  </div>
+</div>
 
-        <article class="cardx" aria-label="Card 4 - Social Work">
-          <div class="thumbnail"><i class="fa-solid fa-people-group"></i></div>
-          <h3>Social Work</h3>
-        </article>
-      </div>
-    </div>
-  </section>
+<!-- Sports Popup -->
+<div id="sportsPopup" class="popup-overlay" aria-hidden="true">
+  <div class="popup-box">
+    <span class="close-popup" onclick="closePopup('sportsPopup')">&times;</span>
+    <img src="images/DSC01264.JPG" alt="Sports">
+    <h3>Sports</h3>
+    <p>Sports play an important role in youth development. Through multiple local tournaments, sports camps, and facility upgrades, Mrs. Anitatai Kate has encouraged youngsters to participate in various sports activities and lead healthy, disciplined lives.</p>
+  </div>
+</div>
 
+<<<<<<< HEAD
   <!-- TRANSFORMING SECTION -->
   <section class="transforming">
     <div class="transforming-heading">
@@ -640,6 +779,17 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
       </div>
     </section>
   </section>
+=======
+<!-- Social Work Popup -->
+<div id="socialPopup" class="popup-overlay" aria-hidden="true">
+  <div class="popup-box">
+    <span class="close-popup" onclick="closePopup('socialPopup')">&times;</span>
+    <img src="images/DSC_5370.JPG" alt="Social Work">
+    <h3>Social Work</h3>
+    <p>Mrs. Anitatai Kate has been a strong advocate for social reform, focusing on education, women empowerment, and support for underprivileged families. Her tireless efforts have improved the lives of countless citizens through community engagement and development programs.</p>
+  </div>
+</div>
+>>>>>>> 79052149feb7fb134fd34cbca7e86709735ac670
 
   <!-- TOWN INFRASTRUCTURE SLIDE (From previous context) -->
   <section class="town-infra-slide">
@@ -742,6 +892,26 @@ ham.addEventListener("click", () => {
       appearOnScroll.observe(fader);
     });
   </script>
+
+  <!-- ✨ Then add your popup JavaScript here -->
+<script>
+  function openPopup(id) {
+    document.getElementById(id).style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePopup(id) {
+    document.getElementById(id).style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+
+  window.onclick = function(event) {
+    if (event.target.classList.contains('popup-overlay')) {
+      event.target.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  };
+</script>
 
   <script>
     const video = document.getElementById("myVideo");
