@@ -195,6 +195,23 @@
     padding: 13px;
   }
 }
+.chat-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25D366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 26px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 
 /* About mobile responsive */
 .upper-section {
@@ -469,13 +486,13 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
             
         </video>
 
-        <!-- <h1 class="hero-title">Welcome to My Creative World</h1> -->
-        <p class="hero-subtitle">Discover amazing development insights and creative projects that inspire innovation and
+        <h1 style="color: #fff;font-size: 3rem;">Anita Sandeep Kate</h1>
+        <!-- <p class="hero-subtitle">Discover amazing development insights and creative projects that inspire innovation and
           growth.</p>
         <div class="hero-buttons">
           <button class="btn btn-primary">Explore Work</button>
           <button class="btn btn-secondary">Learn More</button>
-        </div>
+        </div> -->
         <!-- </div> -->
       </div>
     </div>
@@ -847,6 +864,16 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
 
 <!-- Mob Responsive -->
  <Script>
+
+
+document.getElementById("chatBtn").addEventListener("click", function () {
+    const phoneNumber = "918975922020";  // <-- replace with your number
+    const message = "Hello, I saw your website and I want to know more.";
+
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+});
+
 const menu = document.querySelector(".nav-menu");
 const ham = document.querySelector(".hamburger");
 

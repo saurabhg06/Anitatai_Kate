@@ -339,6 +339,23 @@ button:hover {
     width: 100%;
   }
 }
+.chat-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25D366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 26px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 
 </Style>
 
@@ -496,6 +513,13 @@ button:hover {
     </footer>
 
 <script>
+document.getElementById("chatBtn").addEventListener("click", function () {
+    const phoneNumber = "918975922020";  // <-- replace with your number
+    const message = "Hello, I saw your website and I want to know more.";
+
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+});
 
 document.getElementById("contactForm").addEventListener("submit", function(e) {
     e.preventDefault();

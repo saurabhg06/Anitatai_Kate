@@ -113,22 +113,22 @@
 
 /* Floating Chat Button */
 .chat-btn {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: #d7ff00;
-    color: #000;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25D366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 26px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 
 .chat-btn:hover {
     transform: scale(1.1);
@@ -371,6 +371,15 @@
   </footer>
 
 <script>
+
+
+document.getElementById("chatBtn").addEventListener("click", function () {
+    const phoneNumber = "918975922020";  // <-- replace with your number
+    const message = "Hello, I saw your website and I want to know more.";
+
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+});
 
 const addImageBtn = document.getElementById("addImageBtn");
 const imageInput = document.getElementById("imageInput");
