@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap');
+
+
 :root {
     --white: #ffffff;
     --accent-color: #f1c40f;
@@ -100,7 +103,8 @@ height: 5rem;
     font-weight: 700;
      color: white;
     letter-spacing: -0.5px;
-}
+    
+  }
 
 .nav-brand .logo span {
     font-weight: 300;
@@ -320,6 +324,7 @@ height: 5rem;
 .hero-buttons {
     display: flex;
     gap: 1rem;
+     align-items: center;   
 }
 
 .btn {
